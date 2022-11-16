@@ -1,10 +1,3 @@
-//
-//  main.cpp
-//  hw1_sparseMatrix
-//
-//  Created by Natalie Hill on 9/6/22.
-//
-
 #include <iostream>
 using namespace std;
 class matrix {
@@ -18,20 +11,12 @@ private:
     int m[3][5];
 };
 void matrix::SetEntry(int i, int j, int v) {
-    
-    // ------------------------------------------------------
-    // assign value v to the row i and column j of matrix "m"
-    // ------------------------------------------------------
     m[i][j] = v;
 }
 int matrix::GetEntry(int i, int j) {
-    // this function returns matrix entry at row i and column j
     return m[i][j];
 }
 int matrix::CountNonZero() {
-    // ------------------------------------------------------
-    // return the number of non-zero elements in matrix "m"
-    // ------------------------------------------------------
     int count = 0;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 5; j++) {
@@ -43,23 +28,6 @@ int matrix::CountNonZero() {
     return count;
 }
 void matrix::GetSparseRep() {
-    
-    // ------------------------------------------------------
-    // generate a sparse representation of matrix "m"
-    // ------------------------------------------------------
-    // assign results to (SparseRow, SparseCol, SparseVal)
-    // use SparseRow to hold row indcies
-    // use SparseCol to hold column indcies
-    // use SparseVal to hold entry values
-    //
-    // For example, if the first non-zero element we find is m[a][b],
-    // then SparseRow[0]=a, SparseCol[0]=b, SparseVale[0]=m[a][b].
-    // If the second non-zero element we find is m[c][d], then
-    // SparseRow[1]=a, SparseCol[1]=b, SparseVale[1]=m[a][b]
-    //
-    // parts of the code is given to you, please build on them
-    // you can add lines both inside and outside the loop.
-    // --------------------------------------------------------
     int c = CountNonZero();
     SparseRow = new int[c]();
     SparseCol = new int[c]();
@@ -79,14 +47,6 @@ void matrix::GetSparseRep() {
 }
 int main()
 {
-    // The main function is given to you.
-    // It first declares a matrix object "x",
-    // then inputs the matrix values,
-    // then generates the sparse representation
-    // of the matrix and finally outputs it.
-    // You do not need to modify this function.
-    // And please do not modify it or Gradescope
-    // may not recognize the format of your intput/output.
     matrix x;
     
     int temp, mode;
